@@ -1,0 +1,52 @@
+.customSelect {
+    position: relative;
+    width: 200px;
+  }
+
+  .customSelect > input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+  }
+
+  .optionsList {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  .optionsList > input[type="text"] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .eachOption {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .eachOption label {
+    display: flex;
+    align-items: center;
+  }
+
+  .eachOption input[type="checkbox"] {
+    margin-right: 8px;
+  }
+
+  .eachOption:hover {
+    background-color: #f0f0f0;
+  }
