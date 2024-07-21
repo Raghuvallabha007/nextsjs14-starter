@@ -11,6 +11,7 @@ const CustomSelectSearchWithApi = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [noListAvailable, setNoListAvailable] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const loadOptions = async () => {
         params: { search: searchTerm, page },
       });
       const data = response.data;
+      setNoListAvailable(data?.options.length === 0);
       if (page === 1) {
         setOptions(data.options);
       } else {
@@ -122,6 +124,7 @@ const loadOptions = async () => {
             </div>
           ))}
           {isLoading && <div>Loading...</div>}
+          {noListAvailable && <div>Not found..</div>}
         </div>
       )}
       {/* <style jsx>{`
